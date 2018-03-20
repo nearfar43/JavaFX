@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox fx:id="mainBox" minHeight="600.0" minWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar minHeight="24.0" minWidth="1280.0" pickOnBounds="false">
+        <menus>
+          <Menu mnemonicParsing="false">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="mainPane" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="586.0" minWidth="1280.0" pickOnBounds="false" scaleShape="false">
+      
+               <children>
+            <HBox cacheShape="false" centerShape="false" focusTraversable="true" minHeight="480.0" minWidth="1280.0" scaleShape="false">
+               <children>
+                  <Pane fx:id="mapPane" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="1280.0" prefHeight="480.0" prefWidth="1280.0" scaleShape="false" styleClass="pane" stylesheets="@TestCSS.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label centerShape="false" layoutX="1.0" layoutY="399.0" scaleShape="false" text="✈" textFill="#d30c0c" visible="false">
+                           <font>
+                              <Font name="Arial Bold" size="32.0" />
+                           </font>
+                        </Label>
+                        <StackPane fx:id="circle" layoutX="173.0" layoutY="263.0" visible="false">
+                           <children>
+                              <Circle fx:id="targetCircle" centerX="108.0" centerY="285.0" opacity="0.62" radius="5.0" strokeType="INSIDE">
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow color="RED" />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="MOVE" />
+                                 </cursor>
+                                 <stroke>
+                                    <LinearGradient endX="1.0" endY="1.0" startX="0.4857142857142857" startY="0.08095238095238096">
+                                       <stops>
+                                          <Stop color="#000000c9" />
+                                          <Stop color="#000000ee" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </stroke>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0" startX="0.5285714285714286" startY="0.3952380952380952">
+                                       <stops>
+                                          <Stop color="BLACK" />
+                                          <Stop color="#00000042" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Circle>
+                           </children>
+                        </StackPane>
+                        <Rectangle fx:id="blueUnit" arcHeight="5.0" arcWidth="5.0" height="25.0" layoutX="4.0" layoutY="387.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="26.0">
+                           <fill>
+                              <RadialGradient centerX="0.5" centerY="0.5" proportional="false" radius="0.5">
+                                 <stops>
+                                    <Stop color="#1f90ff" />
+                                    <Stop color="#ffffff00" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </fill>
+                        </Rectangle>
+                        <StackPane fx:id="blueAirPlane" centerShape="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" prefHeight="50.0" prefWidth="50.0" scaleShape="false" visible="false">
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Label fx:id="blueLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="434.0" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0" scaleShape="false" text="✈" textFill="#1213c4">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Circle fx:id="blueSensorCircle" fill="#ffffff00" layoutX="65.0" layoutY="453.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" styleClass="sensorCircle" />
+                                 </children>
+                              </Group>
+                           </children>
+                        </StackPane>
+                        <StackPane fx:id="blueSearchArea" centerShape="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" prefHeight="50.0" prefWidth="50.0" scaleShape="false" visible="false">
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Circle fx:id="blueAreaCircle" fill="#ffffff00" layoutX="28.0" layoutY="25.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Label fx:id="label1" alignment="CENTER" centerShape="false" contentDisplay="CENTER" layoutX="12.0" layoutY="10.0" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0" scaleShape="false" text="☩" textFill="#c60d0d">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <HBox layoutX="21.0" layoutY="480.0" minHeight="100.0" minWidth="727.0" pickOnBounds="false" prefHeight="179.0" prefWidth="727.0" AnchorPane.topAnchor="480.0">
+               <children>
+                  <Group pickOnBounds="true">
+                     <children>
+                        <TextArea fx:id="textArea" editable="false" layoutX="40.0" layoutY="591.0" minHeight="70.0" minWidth="700.0" prefHeight="101.0" prefRowCount="5" prefWidth="700.0" />
+                        <Slider fx:id="areaSlider" layoutX="52.0" layoutY="547.0" prefHeight="37.0" prefWidth="169.0" showTickLabels="true" showTickMarks="true" />
+                        <Label layoutX="95.0" layoutY="523.0" pickOnBounds="false" text="Search Area">
+                           <font>
+                              <Font name="System Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="goButton" layoutX="390.0" layoutY="542.0" mnemonicParsing="false" text="Start Timer" />
+                        <Group layoutX="-6.0" layoutY="15.0">
+                           <children>
+                              <Label layoutX="574.0" layoutY="527.0" pickOnBounds="false" text="Score:">
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="plusLabel" layoutX="658.0" layoutY="530.0" text="+" visible="false" />
+                              <Label fx:id="bonusLabel" layoutX="676.0" layoutY="529.0" text="Label" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="scoreLabel" layoutX="630.0" layoutY="528.0" text="Label">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Circle fx:id="scoreCircle" fill="#ffffff00" layoutX="658.0" layoutY="544.0" radius="25.0" stroke="#000000bb" strokeType="INSIDE" visible="false" />
+                              <ProgressBar fx:id="scoreBar" layoutX="634.0" layoutY="530.0" pickOnBounds="false" prefHeight="19.0" prefWidth="98.0" progress="0.0" />
+                           </children>
+                        </Group>
+                        <TextField fx:id="confidentInput" disable="true" layoutX="268.0" layoutY="543.0" maxHeight="15.0" prefHeight="8.0" prefWidth="91.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="259.0" layoutY="523.0" pickOnBounds="false" text="Confident Score">
+                           <font>
+                              <Font name="System Italic" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+               </children>
+            </HBox>
+            <StackPane layoutX="1101.0" layoutY="480.0" minHeight="100.0" minWidth="100.0" pickOnBounds="false" style="-fx-background-color: transparent;" stylesheets="@clock.css" AnchorPane.topAnchor="480.0">
+                <children>
+                    <Group>
+                        <children>
+                            <SVGPath fx:id="dialMinutes" cacheHint="SPEED" content="M 100.0,12.0 L 100.0,32.0 M 108.8,16.5 L 108.6,18.4 M 117.5,17.8 L 117.0,19.8 M 126.0,20.1 L 125.3,22.0 M 134.2,23.3 L 133.4,25.1 M 144.0,23.8 L 134.0,41.1 M 149.4,32.0 L 148.2,33.7 M 156.2,37.6 L 154.9,39.1 M 162.4,43.8 L 160.9,45.1 M 168.0,50.6 L 166.3,51.8 M 176.2,56.0 L 158.9,66.0 M 176.7,65.8 L 174.9,66.6 M 179.9,74.0 L 178.0,74.7 M 182.2,82.5 L 180.2,83.0 M 183.5,91.2 L 181.6,91.4 M 188.0,100.0 L 168.0,100.0 M 183.5,108.8 L 181.6,108.6 M 182.2,117.5 L 180.2,117.0 M 179.9,126.0 L 178.0,125.3 M 176.7,134.2 L 174.9,133.4 M 176.2,144.0 L 158.9,134.0 M 168.0,149.4 L 166.3,148.2 M 162.4,156.2 L 160.9,154.9 M 156.2,162.4 L 154.9,160.9 M 149.4,168.0 L 148.2,166.3 M 144.0,176.2 L 134.0,158.9 M 134.2,176.7 L 133.4,174.9 M 126.0,179.9 L 125.3,178.0 M 117.5,182.2 L 117.0,180.2 M 108.8,183.5 L 108.6,181.6 M 100.0,188.0 L 100.0,168.0 M 91.2,183.5 L 91.4,181.6 M 82.5,182.2 L 83.0,180.2 M 74.0,179.9 L 74.7,178.0 M 65.8,176.7 L 66.6,174.9 M 56.0,176.2 L 66.0,158.9 M 50.6,168.0 L 51.8,166.3 M 43.8,162.4 L 45.1,160.9 M 37.6,156.2 L 39.1,154.9 M 32.0,149.4 L 33.7,148.2 M 23.8,144.0 L 41.1,134.0 M 23.3,134.2 L 25.1,133.4 M 20.1,126.0 L 22.0,125.3 M 17.8,117.5 L 19.8,117.0 M 16.5,108.8 L 18.4,108.6 M 12.0,100.0 L 32.0,100.0 M 16.5,91.2 L 18.4,91.4 M 17.8,82.5 L 19.8,83.0 M 20.1,74.0 L 22.0,74.7 M 23.3,65.8 L 25.1,66.6 M 23.8,56.0 L 41.1,66.0 M 32.0,50.6 L 33.7,51.8 M 37.6,43.8 L 39.1,45.1 M 43.8,37.6 L 45.1,39.1 M 50.6,32.0 L 51.8,33.7 M 56.0,23.8 L 66.0,41.1 M 65.8,23.3 L 66.6,25.1 M 74.0,20.1 L 74.7,22.0 M 82.5,17.8 L 83.0,19.8 M 91.2,16.5 L 91.4,18.4" stroke="BLACK" strokeWidth="2.0" />
+                            <SVGPath fx:id="hourHand" cacheHint="SPEED" content="M 100,100 L 92,90 L 100,40 L 108,90 Z" />
+                            <SVGPath cacheHint="SPEED" content="M 100,95 A 5,5 0 1 1 99 95" />
+                        </children>
+                    </Group>
+                </children>
+            </StackPane>
+            <Group />
+            <Text fx:id="text" layoutX="759.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
